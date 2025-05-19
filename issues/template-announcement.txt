@@ -1,0 +1,13 @@
+---
+# Dateiname: <jahr>-<monat>-<tag>-<kurzbeschreibung>
+# siehe auch https://github.com/cstate/cstate/wiki/Usage#creating-incidents-method-1
+
+title: <Kurzbeschreibung>
+date: 2025-05-06 13:02:00
+informational: true
+# pin: false, wenn die Wartung nicht mehr prominent angezeigt werden soll
+pin: true 
+section: issue
+---
+
+<Längere Beschreibung als Markdown / auch für Updates>
