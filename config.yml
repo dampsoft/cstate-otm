@@ -43,7 +43,7 @@
 
 # What is your status page called?
 # Shows up in the browser bar and meta tags
-title: Eggsample Status
+title: Dampsoft OTM Status
 
 # Should posts, which have a publish date
 # from the future, be built? Useful for
@@ -64,7 +64,7 @@ buildFuture: true
 #
 # See:  https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 # Also: https://www.w3schools.com/tags/ref_language_codes.asp
-languageCode: en
+languageCode: de
 
 # What translation file should cState use?
 # You can also define whether missing
@@ -76,9 +76,9 @@ languageCode: en
 # For enableMissingTranslationPlaceholders—
 # do not set it to true for languages other
 # than English! When tested with Lithuanian,
-# it would add unnecesary placeholders to
+# it would add unnecessary placeholders to
 # values that were intentionally empty.
-defaultContentLanguage: en
+defaultContentLanguage: de
 
 # What is the hostname or path to the root?
 # Where is the site hosted?
@@ -89,7 +89,7 @@ defaultContentLanguage: en
 # version 3. If you are just testing,
 # localhost should automatically work.
 #
-# Example: 
+# Example:
 # baseUrl: https://status.example.com/
 #
 # For testing:
@@ -97,7 +97,7 @@ defaultContentLanguage: en
 #
 # Broken example:
 # baseUrl: /
-baseURL: https://example.com
+baseURL: https://status.termin.dampsoft.net
 
 # For features like Last modified, you
 # need to use a Git repository. If you
@@ -133,7 +133,7 @@ params:
   #   and the user can expand by clicking on the category
   #   (Requires JavaScript.)
   # - untitled boolean `untitled: true`
-  #   This would complerely hide the name of the category.
+  #   This would completely hide the name of the category.
   #   This is useful, if you do not want to use categories
   #   because you need to set an 'Uncategorized' category.
   #   Or it can be used alongside other categories.
@@ -143,10 +143,7 @@ params:
   # For help, see the wiki:
   # https://github.com/cstate/cstate/wiki/Customization
   categories:
-    - name: North Coast
-      description: The main servers are located here.
-      closed: true
-    - name: Empty Category
+    - name: OTM
     - name: Uncategorized
       untitled: true
 
@@ -158,37 +155,48 @@ params:
   # For help, see the wiki:
   # https://github.com/cstate/cstate/wiki/Customization
   systems:
-    - name: Gateway
-      category: North Coast
-    - name: Backup Gateway
-      category: North Coast
-    - name: Website
-      description: The web frontend for the application.
-      category: Uncategorized
-      link: https://example.com/
-    - name: API
-      description: The guts of the application.
-      category: Uncategorized
-    - name: Media Proxy
-      description: This is the service responsible for serving images, audio, and video. It is reliant on our CDN.
-      category: Uncategorized
+    - name: OTM
+      category: OTM
+
+  # Want to enable the uptime histogram?
+  # Set this to `false` for any system you want to disable.
+  #
+  # Default: `true`
+  # BOOLEAN; `true`, `false`
+  enableUptimeHistogram: false
+
+  # Monitor bot
+  #
+  # If you have a monitor bot, you get access to
+  # more features like notifications to Slack,
+  # Discord, and more.
+  #
+  # The monitor bot is compatible v6 and up.
+  # It is released here: https://github.com/cstate/monitorbot
+  #
+  # Default: `false`
+  # STRING or BOOLEAN to disable
+  monitorBot: false
 
   # What date format to use?
   #
   # Hugo formatting docs:
   # https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
+  # https://gohugo.io/functions/time/format/
   #
   # Technical: GOLANG/HUGO .Date.Format & dateFormat
   #
   # dateFormat Default: "January 2, 2006 at 3:04 PM"
   # shortDateFormat Default: "15:04 — Jan 2"
-  dateFormat: January 2, 2006 at 3:04 PM UTC
-  shortDateFormat: 15:04 UTC — Jan 2
+  dateFormat: 02.01.2006 - 15:04
+  shortDateFormat: 02.01 - 15:04
+  # Note: "at" is not translated with language codes, e.g.
+  # for German, it would be "um", so change it if needed.
 
   # Should relative time (x min ago) be used?
   #
   # IMPORTANT: In the frontmatter, the dates MUST be in
-  # the UTC time zone for this to work preperly. If you 
+  # the UTC time zone for this to work properly. If you
   # use Netlify CMS, all good — the CMS picks UTC time
   # by default. Otherwise, there may be very inaccurate
   # times if multiple time zones are in your issue files.
@@ -198,8 +206,8 @@ params:
   # wish to use relative time but old issues do not have
   # UTC time (and therefore are out of sync by ±24 hours)
   #
-  # Read the wiki for more: 
-  # https://github.com/cstate/cstate/wiki/Customization#time 
+  # Read the wiki for more:
+  # https://github.com/cstate/cstate/wiki/Customization#time
   #
   # If enabled, will display relative times in places like
   # the incident history and summaries instead of using
@@ -209,7 +217,7 @@ params:
   # Default: `true`
   # BOOLEAN; `true`, `false`
   useRelativeTime: true
- 
+
   # If enabled, doesn't show seconds on relative times.
   #
   # With option ON (true):
@@ -236,12 +244,12 @@ params:
   useLargeHeaderDesign: false
 
   # Should incident history be separated
-  # like in an archive view?
+  # in the archive view by year or month?
   #
-  # Note: This WILL disable pagination.
+  # Only takes affect on /issues/ page.
   #
   # Default: `yearly`
-  # STRING; `monthly`, `yearly`, `none`
+  # STRING; `monthly`, `yearly`
   incidentHistoryFormat: "yearly"
 
   # Should incident history be hidden?
@@ -315,11 +323,39 @@ params:
   # BOOLEAN; `true`, `false`
   disableComplexCalculations: false
 
-  # Incident posts shown
-  # in one page
+  # Incident posts shown on homepage
   #
-  # NUMERIC; Default: `10`
-  incidentPostsPerPage: 10
+  # NUMERIC; Default: `5`
+  incidentPostsPerPage: 1
+
+  # Enable custom CSS, JS, HTML
+  #
+  # Edit the files in /layouts/partials/custom/
+  # to customize your status page.
+  #
+  # Default: `true`
+  # BOOLEAN; `true`, `false`
+  enableCustomHTML: true
+
+  # Introduced in v6, you can hide
+  # incidents that are older than
+  # this number of years.
+  #
+  # Note: this does not mean they
+  # are no longer accessible.
+  # If you still have the issue
+  # link, you can still access it.
+  #
+  # We recommend to keep this at `6`.
+  # This will hide incidents older
+  # than 6 years on /issues/ archive.
+  #
+  # To disable this feature, comment
+  # out the line below.
+  #
+  # Default: empty
+  # NUMERIC
+  incidentMaxAgeYears: 2
 
   # Colors throughout cState
   #
@@ -378,6 +414,7 @@ params:
   #
   # Default: UA-00000000-1
   googleAnalytics: UA-00000000-1
+
 
 # These options affect the core of cState.
 # Please do not change them if you do not
