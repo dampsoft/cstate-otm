@@ -143,7 +143,7 @@ params:
   # For help, see the wiki:
   # https://github.com/cstate/cstate/wiki/Customization
   categories:
-    - name: OTM
+    - name: Online Terminmanagement
     - name: Uncategorized
       untitled: true
 
@@ -156,7 +156,7 @@ params:
   # https://github.com/cstate/cstate/wiki/Customization
   systems:
     - name: OTM
-      category: OTM
+      category: Online Terminmanagement
 
   # Want to enable the uptime histogram?
   # Set this to `false` for any system you want to disable.
