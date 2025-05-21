@@ -1,12 +1,44 @@
 <style>
     .pre-header-links {
-        background-color: #0a0c0f;
+        background-color: rgb(241, 241, 241);
         text-align: right;
         padding-right: 10px;
     }
 
     .pre-header-links a {
         border-bottom: none;
-        color: #fff;
+        color: #000;
     }
+
+    .header,
+    .footer {
+        background-color: rgb(241, 241, 241);
+    }
+
+    {{ if not .Site.Params.disableDarkMode }}
+
+    /**
+    * Dark theme
+    */
+
+    @media (prefers-color-scheme: dark) {
+
+        .pre-header-links {
+        background-color: #0a0c0f;
+        text-align: right;
+        padding-right: 10px;
+        }
+
+        .pre-header-links a {
+            border-bottom: none;
+            color: #e8e6e3;
+        }
+
+        .header,
+        .footer {
+             background-color:#0a0c0f;
+        }
+    }
+
+    {{ end }}
 </style>
