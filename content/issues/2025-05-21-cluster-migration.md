@@ -1,9 +1,10 @@
 ---
 title: geplante Cluster-Migration
 date: 2025-05-21 12:00:00
-informational: true
-# pin: false, wenn die Wartung nicht mehr prominent angezeigt werden soll
-pin: true 
+resolved: true
+resolvedWhen: 2025-05-21 15:45:00
+affected:
+  - OTM
 section: issue
 ---
 
