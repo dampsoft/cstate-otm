@@ -300,7 +300,7 @@ params:
   # on the footer and meta tags.
   #
   # Default: We continuously monitor the status of our services and if there are any interruptions, a note will be posted here.
-  description: We continuously monitor the status of our services and if there are any interruptions, a note will be posted here.
+  description: Hier informieren wir Sie über Störungen an unseren Diensten. Wir empfehlen den RSS-Feed zu abonnieren.
 
   # Tabs on homepage
   # Uncomment to enable.
