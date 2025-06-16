@@ -4,10 +4,12 @@
 
 title: <Kurzbeschreibung>
 date: 2025-05-06 13:02:00
+
 resolved: false
 #resolvedWhen: 2025-05-06 16:58:00
 # Possible severity levels: down, disrupted, notice
 severity: disrupted
+
 affected:
 #  - OTM
 section: issue
