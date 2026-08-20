@@ -1,6 +1,8 @@
 ---
+# Siehe auch Beschreibung im internem Produkthandbuch "Statusseiten"
 # Dateiname: <jahr>-<monat>-<tag>-<kurzbeschreibung>
 # siehe auch https://github.com/cstate/cstate/wiki/Usage#creating-incidents-method-1
+
 
 title: <Kurzbeschreibung>
 date: 2025-05-06 13:02:00
