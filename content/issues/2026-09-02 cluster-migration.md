@@ -2,10 +2,8 @@
 title: geplante Cluster-Migration
 date: 2026-09-02 10:00:00
 
-pin: true ## entfernen, wenn das Announcement durch ist
-informational: true ## entfernen, wenn das Announcement zu einem Issue umgestellt werden soll
-# resolved: false ## einkommentieren, wenn Announcement zu einem Issue umgestellt werden soll
-# resolvedWhen: 2026-09-02 16:58:00
+resolved: true
+resolvedWhen: 2026-09-02 15:00:00
 # Possible severity levels: down, disrupted, notice
 severity: notice
 
